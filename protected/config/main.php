@@ -32,7 +32,7 @@ $patern.="|mercadopago_success|mercadopago_failure|mercadopagoinit|changepasswor
 $patern=strtolower($patern);
 
 return array(
-	'name'=>'Karinderia Multiple Restaurant',
+	'name'=>'RapidTest',
 	
 	'defaultController'=>'store',
 		
@@ -144,10 +144,10 @@ return array(
 				
 		'db'=>array(	        
 		    'class'            => 'CDbConnection' ,
-			'connectionString' => 'mysql:host=localhost;dbname=kmrs',
+			'connectionString' => 'mysql:host=localhost;dbname=cons5437_rapidtest',
 			'emulatePrepare'   => true,
-			'username'         => 'root',
-			'password'         => '',
+			'username'         => 'cons5437_rapidtest',
+			'password'         => 'rapidtest2020',
 			'charset'          => 'utf8',
 			'tablePrefix'      => 'mt_',
 	    ),
