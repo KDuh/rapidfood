@@ -907,8 +907,8 @@ class Functions extends CApplicationComponent
                    array('visible'=>FunctionsV3::hasMerchantAccessToMenu($user_access,"stp"),'tag'=>'stp', 'label'=>'<i class="fa fa-paypal"></i>'.Yii::t("default","Stripe"),                    
                    'url'=>array('merchant/stripeSettings')),                
                    
-                   /*array('visible'=>FunctionsV3::hasMerchantAccessToMenu($user_access,"mcd"),'tag'=>'mcd', 'label'=>'<i class="fa fa-paypal"></i>'.Yii::t("default","Mercadopago"), 
-                   'url'=>array('merchant/mercadopagoSettings')),*/
+                   array('visible'=>FunctionsV3::hasMerchantAccessToMenu($user_access,"mcd"),'tag'=>'mcd', 'label'=>'<i class="fa fa-paypal"></i>'.Yii::t("default","Mercadopago"), 
+                   'url'=>array('merchant/mercadopagoSettings')),
                    
                    array('visible'=>FunctionsV3::hasMerchantAccessToMenu($user_access,"mercadopago"),'tag'=>'mercadopago', 'label'=>'<i class="fa fa-paypal"></i>'.Yii::t("default","mercadopago V2"), 
                    'url'=>array('merchant/mercadopago')),
@@ -1230,7 +1230,7 @@ class Functions extends CApplicationComponent
 		   }		
 		}			
 		
-		/*$tag_paymentgateway=array(
+		$tag_paymentgateway=array(
 		  'paypal','stripe','mercadopago','ide','payu','pys','ccr','bcy','epy','pyr',
 		  'atz','obd','pyp','stp','mcd','ocr','btr','rzr','mri'
 		);				
@@ -1244,7 +1244,7 @@ class Functions extends CApplicationComponent
 			if (!in_array($tag,(array)$list_payment)){
 				return false;
 			}
-		}*/
+		}
 		
 		/*CHECK IF ENABLED IN PAYMENT GATEWAY SETTINGS*/
 		if ( $tag=="obdreceive"){
@@ -1573,9 +1573,9 @@ class Functions extends CApplicationComponent
                    'tag'=>'stripeSettings','label'=>'<i class="fa fa-paypal"></i>'.Yii::t("default","Stripe"), 
                    'url'=>array('admin/stripeSettings')),                
                    
-                   /*array('visible'=>$this->AA('mercadopagoSettings'),'tag'=>'mercadopagoSettings',
+                   array('visible'=>$this->AA('mercadopagoSettings'),'tag'=>'mercadopagoSettings',
                    'label'=>'<i class="fa fa-paypal"></i>'.Yii::t("default","Mercadopago"), 
-                   'url'=>array('admin/mercadopagoSettings')),                                   */
+                   'url'=>array('admin/mercadopagoSettings')),                                   
                    
                    array('visible'=>$this->AA('mercadopago'),'tag'=>'mercadopago',
                    'label'=>'<i class="fa fa-paypal"></i>'.Yii::t("default","mercadopago V2"), 

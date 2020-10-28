@@ -1318,13 +1318,13 @@ class FunctionsV3
     	*/
     	
     	return array(
-    	  'cod'=>t("Cash On delivery"),
-    	  'ocr'=>t("Offline Credit Card Payment"),
-    	  'pyr'=>t("Pay On Delivery"),
+    	  //'cod'=>t("Cash On delivery"),
+    	  //'ocr'=>t("Offline Credit Card Payment"),
+    	  //'pyr'=>t("Pay On Delivery"),
     	  //'pyp'=>t("Paypal"),
     	  'paypal_v2'=>t("Paypal V2"),
     	  'stp'=>t("Stripe"),
-    	  //'mcd'=>t("Mercapado"),
+    	  'mcd'=>t("Mercado Pago"),
     	  'mercadopago'=>t("mercadopago V2"),
     	  'ide'=>t("Sisow"),
     	  'payu'=>t("Payumoney"),
@@ -8177,10 +8177,10 @@ class FunctionsV3
     		/*case "stp":
     		   $tag="stripe";
     		   break;   */
-    		   
-    		/*case "mcd":
+    		//Alteração MercadoPago   
+    		case "mcd":
     		   $tag="mercadopago";
-    		   break;      */
+    		   break;      
     		   
     		   
     		case "commission":
