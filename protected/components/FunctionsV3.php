@@ -3532,6 +3532,17 @@ class FunctionsV3
     		self::MerchantpushNewOrder($data['order_id']);
     		FunctionsV3::fastRequest(FunctionsV3::getHostURL().Yii::app()->createUrl("merchantapp/cron/processpush"));
     	}
+
+		/*SEND PUSH TO MERCHANT APP V2*/
+		 if (FunctionsV3::hasModuleAddon("merchantappv2")){    		
+			Yii::app()->setImport(array(			
+			  'application.modules.merchantappv2.components.*',
+			));
+			 OrderWrapper::InsertOrderTrigger(
+			   isset($data['order_id'])?$data['order_id']:'',
+			   'receipt_send_to_merchant'   		   
+			 );
+		 }
     	    	
     	unset($DbExt);
     }
@@ -4244,7 +4255,20 @@ class FunctionsV3
 	    	  }
 	   	   }   	   
    	   }
-   	   
+
+		/*SEND PUSH TO MERCHANT APP V2*/
+		if (FunctionsV3::hasModuleAddon("merchantappv2")){    		
+			Yii::app()->setImport(array(			
+			  'application.modules.merchantappv2.components.*',
+			));
+			OrderWrapper::InsertOrderTrigger(
+			   isset($data['booking_id'])?$data['booking_id']:'',
+			   'booked_notify_merchant',
+			   isset($data['booking_notes'])?$data['booking_notes']:'',
+			   'booking'
+			);
+		}
+		   
    	   unset($DbExt);
    	   FunctionsV3::runCronEmail();
    }
@@ -6483,7 +6507,18 @@ class FunctionsV3
     			}
     		}
     	}	
-    	/*END SEND NOTIFICATION TO ADMIN SMS*/    	    	
+    	/*END SEND NOTIFICATION TO ADMIN SMS*/
+
+		/*SEND PUSH TO MERCHANT APP V2*/
+		if (FunctionsV3::hasModuleAddon("merchantappv2")){    		
+			Yii::app()->setImport(array(			
+			  'application.modules.merchantappv2.components.*',
+			));
+			 OrderWrapper::InsertOrderTrigger(
+			   isset($data['order_id'])?$data['order_id']:'',
+			   'order_request_cancel_to_merchant'
+			 );
+		}      	    	
 		
 	}
 	

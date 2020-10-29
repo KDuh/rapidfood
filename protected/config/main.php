@@ -119,7 +119,10 @@ return array(
 				'inventory/upload',
 				'singlemerchant/payu',
 				'mobileappv2/payu',
-				'merchantappv2/api'
+				'merchantappv2/api',				                
+				'merchantappv2/ajax/uploadFile',
+				'merchantappv2/ajax/uploadFile2',
+				'merchantappv2/api/UploadFile'
 	        ),
         ),
         'session' => array(
