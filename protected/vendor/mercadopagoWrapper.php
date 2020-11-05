@@ -84,7 +84,7 @@ class mercadopagoWrapper
 		  "installments" => 12
 		);
 
-		//Mercado Pago Corrigido - Teste
+		//Mercado Pago Corrigido - Teste - Teste do Teste
 
         $item = new MercadoPago\Item();	    
 	    $item->title = $params['title'];
